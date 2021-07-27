@@ -48,6 +48,15 @@ in
   programs.qutebrowser.enable = true;
   programs.mpv.enable = true;
 
+  programs.git = {
+    enable = true;
+    userName = "rkb";
+    userEmail = "rumbletumjum@gmail.com";
+    aliases = {
+      st = "status";
+    };
+  };
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
