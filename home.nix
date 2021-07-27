@@ -71,12 +71,12 @@ in
     ];
 
     extraConfig = ''
-      set background=light
+      set background=dark
       set number
       set relativenumber
       set t_Co=256
       set termguicolors
-      colorscheme solarized8
+      colorscheme gruvbox8
     '';
   };
 
