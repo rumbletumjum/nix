@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   solarized8 = pkgs.vimUtils.buildVimPlugin {
@@ -111,6 +111,53 @@ in
     '';
   };
 
+  xsession.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
+    config = {
+      modifier = "Mod4";
+      terminal = "gnome-terminal";
+      menu = "${pkgs.bemenu}/bin/bemenu-run";
+      defaultWorkspace = "workspace number 1";
+      workspaceAutoBackAndForth = true;
+      workspaceLayout = "tabbed";
+      keybindings =
+        let
+          modifier = config.xsession.windowManager.i3.config.modifier;
+          menu = config.xsession.windowManager.i3.config.menu;
+        in lib.mkOptionDefault {
+          "${modifier}+p" = "exec ${menu}";
+
+          "${modifier}+h" = "focus left";
+          "${modifier}+j" = "focus down";
+          "${modifier}+k" = "focus up";
+          "${modifier}+l" = "focus right";
+
+          "${modifier}+Shift+h" = "move left";
+          "${modifier}+Shift+j" = "move down";
+          "${modifier}+Shift+k" = "move up";
+          "${modifier}+Shift+l" = "move right";
+          
+          "${modifier}+Shift+e" = "exec /usr/bin/gnome-session-quit --logout";
+        };
+      fonts = {
+        names = [ "Iosevka" ];
+        style = "Regular";
+        size = 12.0;
+      };
+      bars = [
+        {
+          position = "top";
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+          fonts = {
+            names = [ "Iosevka" ];
+            style = "Regular";
+            size = 10.0;
+          };
+        }
+      ];
+    };
+  };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
