@@ -23,17 +23,22 @@ in
   home.packages = with pkgs; [
     aria2
     bat
+    bemenu
+    dmenu
     duf
     fd
     ffmpeg
     ghq
     glances
+    hsetroot
     htop
+    j4-dmenu-desktop
     kitty
     lf
     ncdu
     neofetch
     ripgrep
+    tig
     tree
     youtube-dl
 
