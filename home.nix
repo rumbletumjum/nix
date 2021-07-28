@@ -46,7 +46,6 @@ in
   ];
   
   programs.qutebrowser.enable = true;
-  programs.mpv.enable = true;
 
   programs.git = {
     enable = true;
