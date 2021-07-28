@@ -156,6 +156,9 @@ in
         }
       ];
     };
+    extraConfig = ''
+      for_window [class=.*] border pixel 2
+    '';
   };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
