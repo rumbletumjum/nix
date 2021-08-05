@@ -20,6 +20,8 @@ in
   home.username = "rkb";
   home.homeDirectory = "/home/rkb";
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     aria2
     bat
@@ -157,6 +159,10 @@ in
       for_window [class=.*] border pixel 2
     '';
   };
+
+  xdg.systemDirs.data = [
+    "/home/rkb/.nix-profile/share"
+  ];
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -165,5 +171,5 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.11";
+  home.stateVersion = "21.05";
 }
