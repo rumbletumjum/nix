@@ -34,7 +34,6 @@ in
     hsetroot
     htop
     j4-dmenu-desktop
-    # kitty
     lf
     ncdu
     neofetch
@@ -43,11 +42,7 @@ in
     tig
     tree
     youtube-dl
-
-    chez racket
   ];
-  
-  programs.qutebrowser.enable = true;
 
   programs.git = {
     enable = true;
