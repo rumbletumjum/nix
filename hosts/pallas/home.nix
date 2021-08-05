@@ -13,21 +13,17 @@
     abduco dvtm
     aria2
     bat
-    # coreutils-prefixed
     dfc
     duf
-    # exa
     fd
     fdupes
-    # findutils
     ffmpeg
-    # fzf
+    fzf
     ghq
     glances
     graphviz
     htop
-    # iftop
-    # jq
+    jq
     kitty
     lf
     lua5_3
@@ -43,9 +39,6 @@
     tree
     tty-clock
     vis
-    # watch
-    # youtube-dl
-    # zenith
   ];
 
   xdg.configFile = {
@@ -53,46 +46,6 @@
   };
 
   programs.emacs.enable = true;
-
-#   programs.tmux = {
-#     enable = true;
-#     baseIndex = 1;
-#     clock24 = true;
-#     escapeTime = 0;
-#     historyLimit = 10000;
-#     keyMode = "vi";
-#     newSession = true;
-#     terminal = "screen-256color";
-# 
-#     extraConfig = ''
-#       set -g status-keys emacs
-#       set -g status-interval 5
-#       set -g renumber-windows on
-# 
-#     '';
-#   };
-
-  # programs.vim = {
-  #   enable = false;
-  #   plugins = with pkgs.vimPlugins; [
-  #     polyglot
-  #     vim-nix
-  #     vim-gruvbox8
-  #     vim-commentary
-  #     vim-surround
-  #   ];
-
-  #   settings = {
-  #     background = "dark";
-  #     number = true;
-  #     relativenumber = true;
-  #   };
-
-  #   extraConfig = ''
-  #     set t_Co=256
-  #     colorscheme gruvbox8
-  #   '';
-  # };
 
   programs.neovim = {
     enable = false;
