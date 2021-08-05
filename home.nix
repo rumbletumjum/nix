@@ -30,13 +30,15 @@ in
     ffmpeg
     ghq
     glances
+    graphviz
     hsetroot
     htop
     j4-dmenu-desktop
-    kitty
+    # kitty
     lf
     ncdu
     neofetch
+    nodejs
     ripgrep
     tig
     tree
